@@ -52,6 +52,9 @@ public class PagingIterator<Element: BoxModel> {
     /// The total count of the result set, if known
     public let totalCount: Int?
 
+    /// The current page size, if known
+    public let chunkSize: Int?
+
     /// Initializer
     ///
     /// - Parameters:
@@ -90,6 +93,8 @@ public class PagingIterator<Element: BoxModel> {
             }
 
             totalCount = page.totalCount
+            
+            chunkSize = page.chunkSize
 
             isDone = false
             isStreamEmpty = false
